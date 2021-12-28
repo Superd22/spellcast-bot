@@ -1,0 +1,12 @@
+version: '3'
+services:
+  pg:
+    image: docker.io/postgres:14.1
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: postgres
+    volumes:
+      - ./pgsql:/docker-entrypoint-initdb.d:ro
